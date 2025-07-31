@@ -113,13 +113,7 @@
         header.style.marginLeft = "250px";
       }
     }
-
-    function confirmExit() {
-      const result = confirm("Are you sure you want to leave this page?");
-      if (result) {
-        window.location.href = "exit.html";
-      }
-    }
+    
   </script>
 </head>
 <body>
@@ -127,7 +121,7 @@
 <div id="mySidebar" class="sidebar">
   <a href="home.html">Home</a>
   <a href="about.html">About Me</a>
-  <a href="#" onclick="confirmExit()">Exit</a>
+  <a href="exit.html" >Exit</a>
 </div>
 
 <button class="openbtn" onclick="toggleSidebar()">☰ Menu</button>
