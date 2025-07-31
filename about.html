@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #d8f3dc;
+      color: #333;
+    }
+
+    header {
+      background-color: #b7e4c7;
+      padding: 30px;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #1b4332;
+      transition: margin-left 0.3s;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #40916c;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 16px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .sidebar a:hover {
+      background-color: #52b788;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #74c69d;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    .main-content {
+      margin-left: 0;
+      transition: margin-left 0.3s;
+      padding: 60px 20px 20px 20px;
+    }
+
+    .about-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: 40px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .about-box h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1b4332;
+    }
+
+    .bio-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .bio-list li {
+      margin-bottom: 10px;
+    }
+
+    .about-message {
+      font-size: 17px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+  </style>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("mySidebar");
+      const main = document.getElementById("main");
+      const header = document.querySelector("header");
+
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+        main.style.marginLeft = "0";
+        header.style.marginLeft = "0";
+      } else {
+        sidebar.style.width = "250px";
+        main.style.marginLeft = "250px";
+        header.style.marginLeft = "250px";
+      }
+    }
+
+    function confirmExit() {
+      const result = confirm("Are you sure you want to leave this page?");
+      if (result) {
+        window.location.href = "exit.html";
+      }
+    }
+  </script>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="home.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="#" onclick="confirmExit()">Exit</a>
+</div>
+
+<button class="openbtn" onclick="toggleSidebar()">☰ Menu</button>
+
+<header>About Me</header>
+
+<div id="main" class="main-content">
+  <div class="about-box">
+    <h2>Biographical Data</h2>
+    <ul class="bio-list">
+      <li><strong>Name:</strong> Yasmin Dania Binti Junaidi @ Jeffry</li>
+      <li><strong>Phone Number:</strong> 0183666702</li>
+      <li><strong>Date of Birth:</strong> 20/12/2002</li>
+    </ul>
+    <div class="about-message">
+      I’m currently pursuing a Bachelor’s degree in Multimedia Computing, with a strong foundation in programming languages like C++, Java, and Python, as well as experience using digital media tools such as Unity, Construct 3, Adobe Creative Suite, Blender, and various web development frameworks. I have a passion for building interactive applications and delivering engaging user experiences. I’m excited to apply my skills in a professional setting that complements my academic background, while staying open to opportunities for growth and continuous learning.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

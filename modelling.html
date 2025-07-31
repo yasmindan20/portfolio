@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modelling Project</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #d8f3dc;
+      color: #333;
+    }
+
+    header {
+      background-color: #b7e4c7;
+      padding: 30px;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #1b4332;
+      transition: margin-left 0.3s;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #40916c;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
+
+    .sidebar img {
+      width: 80%;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 16px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .sidebar a:hover {
+      background-color: #52b788;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #74c69d;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    .main-content {
+      margin-left: 0;
+      transition: margin-left 0.3s;
+      padding: 60px 20px 20px 20px;
+    }
+
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .project-link {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      font-size: 18px;
+      text-decoration: none;
+      color: #1b4332;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project-link:hover {
+      background-color: #a3d9a5;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+  </style>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("mySidebar");
+      const main = document.getElementById("main");
+      const header = document.querySelector("header");
+
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+        main.style.marginLeft = "0";
+        header.style.marginLeft = "0";
+      } else {
+        sidebar.style.width = "250px";
+        main.style.marginLeft = "250px";
+        header.style.marginLeft = "250px";
+      }
+    }
+
+    function confirmExit() {
+      const result = confirm("Are you sure you want to leave this page?");
+      if (result) {
+        window.location.href = "exit.html"; // Replace or create exit.html
+      }
+    }
+  </script>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="home.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="#" onclick="confirmExit()">Exit</a>
+</div>
+
+<button class="openbtn" onclick="toggleSidebar()">☰ Menu</button>
+
+<header>Game Development Project</header>
+
+<div id="main" class="main-content">
+  <div class="projects-container">
+    <a class="project-link" href="house.html">3D Dream House Modelling</a>
+  </div>
+</div>
+
+</body>
+</html>
