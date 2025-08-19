@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multimedia Design and Development</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #d8f3dc;
+      color: #333;
+    }
+
+    header {
+      background-color: #b7e4c7;
+      padding: 30px;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #1b4332;
+      transition: margin-left 0.3s;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #40916c;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 16px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .sidebar a:hover {
+      background-color: #52b788;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #74c69d;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    .main-content {
+      margin-left: 0;
+      transition: margin-left 0.3s;
+      padding: 60px 20px 20px 20px;
+    }
+
+    .message-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .message-box p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .download-button {
+      background-color: #52b788;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .download-button:hover {
+      background-color: #40916c;
+    }
+  </style>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("mySidebar");
+      const main = document.getElementById("main");
+      const header = document.querySelector("header");
+
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+        main.style.marginLeft = "0";
+        header.style.marginLeft = "0";
+      } else {
+        sidebar.style.width = "250px";
+        main.style.marginLeft = "250px";
+        header.style.marginLeft = "250px";
+      }
+    }
+
+  </script>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="about.html">About Me</a>
+  <a href="exit.html">Exit</a>
+</div>
+
+<button class="openbtn" onclick="toggleSidebar()">☰ Menu</button>
+
+<header>Multimedia Design and Development</header>
+
+<div id="main" class="main-content">
+  <div class="message-box">
+    <p>You can click the below button to view my report,and the.c3p file</p>
+    <a class="download-button" href="https://drive.google.com/your-link-here" target="_blank">Open in Google Drive</a>
+  </div>
+</div>
+
+</body>
+</html>
