@@ -72,26 +72,33 @@
     }
 
     .projects-container {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 30px;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items in the first row */
+  gap: 30px; /* spacing between items */
+  margin-top: 30px;
+  justify-items: center; /* center the cards in each grid cell */
+}
 
-    .project-link {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      text-align: center;
-      font-size: 18px;
-      text-decoration: none;
-      color: #1b4332;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+.project-link {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px; /* keep consistent width */
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  color: #1b4332;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+  justify-content: center;
+}
 
     .project-link:hover {
       background-color: #a3d9a5;
@@ -135,12 +142,10 @@
     <a class="project-link" href="mathquest.html">Final Year Project - Math Quest: Game Based Learning</a>
     <a class="project-link" href="symphonyvr.html">Symphony Shop Simulation VR</a>
     <a class="project-link" href="waterguardian.html">Water Guardian, Heroes of Tomorrow</a>
+    <a class="project-link" href="multimedia.html">Multimedia Design and Development</a>
     <a class="project-link" href="others.html">Others game</a>
   </div>
 </div>
 
 </body>
 </html>
-
-
-
