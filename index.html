@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      font-family: Times New Roman, sans-serif;
+      font-family: 'Times New Roman', Times, serif;
       background-color: #d0f0c0;
       color: #333;
     }
@@ -18,7 +18,7 @@
       padding: 40px 20px; /* Header box size */
       margin: 0;
       text-align: center;
-      font-size: 5em; /* Header font size*/
+      font-size: 5em; /* Header font size */
       font-weight: bold;
       color: #fff;
     }
@@ -75,24 +75,46 @@
       background-color: #d9ead3;
     }
 
+    /* REQUIREMENT 3: Reduced padding-top from 60px to 10px to move the main content closer to header */
     .main-content {
       margin-left: 0;
       transition: margin-left 0.3s;
-      padding: 60px 20px 20px 20px;
+      padding: 10px 20px 20px 20px; 
     }
 
+    /* REQUIREMENT 4: MAIN CONTENT BOX STYLING & RESIZING LOCATION */
     .about-box {
       background-color: white;
-      padding: 10px;
+      padding: 30px;
       border-radius: 15px;
-      max-width: 800px;
-      margin: 40px auto;
+      
+      /* --- RESIZE MAIN CONTENT BOX HERE --- */
+      max-width: 800px; /* Adjust width of the white box here (e.g., 900px or 1000px if adding more content) */
+      margin: 10px auto 40px auto; /* Reduced top margin from 40px to 10px to bring closer to header */
+      /* ------------------------------------- */
+
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
+    /* REQUIREMENT 2: STYLING FOR PROFILE PICTURE ABOVE "ABOUT ME" TEXT */
+    .profile-img {
+      display: block;
+      margin: 0 auto 20px auto; /* Centers the image and adds space below it */
+      
+      /* --- RESIZE PICTURE HERE --- */
+      width: 180px;  /* Change width to resize image (e.g., 150px or 200px) */
+      height: 180px; /* Change height to resize image (keep width & height equal for circular shape) */
+      /* ---------------------------- */
+      
+      object-fit: cover;
+      border-radius: 50%; /* Makes the image circular inside the box */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    /* REQUIREMENT 1: ENLARGED "ABOUT ME" TEXT */
     .about-box h2 {
       text-align: center;
-      font-size: 20px;
+      font-size: 32px; /* Increased from 20px to make it slightly bigger */
       margin-bottom: 30px;
       color: #1b4332;
     }
@@ -149,21 +171,24 @@
     Welcome to my Portfolio
   </header>
 
-  <!--  Main Content Area -->
+  <!-- Main Content Area -->
   <div id="main" class="main-content">
-  <div class="about-box">
-    <h2>About Me</h2>
-    <ul class="bio-list">
-      <li><strong>Name:</strong> Yasmin Dania Binti Junaidi @ Jeffry</li>
-      <li><strong>Phone Number:</strong> 0183666702</li>
-      <li><strong>Date of Birth:</strong> 20/12/2002</li>
-      <li>I’m currently living in Cyberjaya.</li>
-    </ul>
-    <div class="about-message">
-     I’m currently pursuing a Bachelor’s degree in Multimedia Computing, with a strong foundation in programming languages like C++, Java, and Python, as well as experience using digital media tools such as Unity, Construct 3, Adobe Creative Suite, Blender, and various web development frameworks. I have also gained hands-on experience with MATLAB for media and image processing, and I use Anaconda as a development environment for Python coding and data-related projects. I have a passion for building interactive applications and delivering engaging user experiences. I’m excited to apply my skills in a professional setting that complements my academic background, while staying open to opportunities for growth and continuous learning.
+    <div class="about-box">
+      <!-- REQUIREMENT 2: Inserted image centered above "About Me" heading inside the box -->
+      <img src="gambarysmndnia.jpg" alt="Yasmin Dania" class="profile-img">
+      
+      <h2>About Me</h2>
+      <ul class="bio-list">
+        <li><strong>Name:</strong> Yasmin Dania Binti Junaidi @ Jeffry</li>
+        <li><strong>Phone Number:</strong> 0183666702</li>
+        <li><strong>Date of Birth:</strong> 20/12/2002</li>
+        <li>I’m currently living in Cyberjaya.</li>
+      </ul>
+      <div class="about-message">
+       I’m currently pursuing a Bachelor’s degree in Multimedia Computing, with a strong foundation in programming languages like C++, Java, and Python, as well as experience using digital media tools such as Unity, Construct 3, Adobe Creative Suite, Blender, and various web development frameworks. I have also gained hands-on experience with MATLAB for media and image processing, and I use Anaconda as a development environment for Python coding and data-related projects. I have a passion for building interactive applications and delivering engaging user experiences. I’m excited to apply my skills in a professional setting that complements my academic background, while staying open to opportunities for growth and continuous learning.
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>
