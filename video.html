@@ -22,7 +22,7 @@
     header img {
       width: 100%;
       height: auto;
-      max-height: 350px;
+      max-height: 2000px;
       object-fit: cover;
       display: block;
     }
@@ -75,6 +75,14 @@
       margin-left: 0;
       transition: margin-left 0.3s;
       padding: 60px 20px 20px 20px;
+    }
+
+     .header-message {
+      text-align: center;
+      font-size: 22px; /* Fixed font size in px so it won't auto-scale */
+      font-weight: bold;
+      color: #1b4332;
+      margin-bottom: 20px;
     }
 
     .projects-container {
@@ -154,6 +162,11 @@
 </header>
 
 <div id="main" class="main-content">
+   <!-- Centered Message Above Boxes -->
+  <div class="header-message">
+    Welcome to my Video Editing Showcase! Select a project below to explore.
+  </div>
+
   <div class="projects-container">
     <a class="project-link" href="internship.html">Internship</a>
     <a class="project-link" href="shortvideo.html">Short Video Assingments</a>
