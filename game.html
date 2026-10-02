@@ -22,7 +22,7 @@
     header img {
       width: 100%;
       height: auto;
-      max-height: 250px;
+      max-height: 350px;
       object-fit: cover;
       display: block;
     }
@@ -79,7 +79,7 @@
 
     .projects-container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 items in the first row */
+      grid-template-columns: repeat(3, 1fr); /* 3 columns grid */
       gap: 30px; /* spacing between items */
       margin-top: 30px;
       justify-items: center; /* center the cards in each grid cell */
@@ -89,13 +89,30 @@
       background-color: white;
       padding: 20px;
       border-radius: 10px;
-      width: 280px; /* keep consistent width */
+      
+      /* ======================================================== */
+      /* ADJUST BOX SIZE HERE: change width and height values below */
+      /* ======================================================== */
+      width: 220px;  /* Box width (adjust for larger/smaller squares) */
+      height: 220px; /* Box height (must match width to maintain a square) */
+      box-sizing: border-box; /* Includes padding within the specified size */
+      
+      /* Flexbox alignment to center text vertically and horizontally */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
       text-align: center;
       font-size: 18px;
       text-decoration: none;
       color: #1b4332;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
       transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    /* Positions "Others game" in column 2 (under Symphony Shop Simulation VR) */
+    .others-box {
+      grid-column: 2;
     }
 
     .project-link:hover {
@@ -141,7 +158,7 @@
     <a class="project-link" href="mathquest.html">Final Year Project - Math Quest: Game Based Learning</a>
     <a class="project-link" href="symphonyvr.html">Symphony Shop Simulation VR</a>
     <a class="project-link" href="waterguardian.html">Water Guardian, Heroes of Tomorrow</a>
-    <a class="project-link" href="others.html">Others game</a>
+    <a class="project-link others-box" href="others.html">Others game</a>
   </div>
 </div>
 
