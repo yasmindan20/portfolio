@@ -77,6 +77,14 @@
       padding: 60px 20px 20px 20px;
     }
 
+    .header-message {
+      text-align: center;
+      font-size: 22px; /* Fixed font size in px so it won't auto-scale */
+      font-weight: bold;
+      color: #1b4332;
+      margin-bottom: 20px;
+    }
+
     .projects-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* 3 columns grid */
@@ -158,6 +166,11 @@
 </header>
 
 <div id="main" class="main-content">
+  <!-- Centered Message Above Boxes -->
+  <div class="header-message">
+    Welcome to my Game Development Showcase! Select a project below to explore.
+  </div>
+  
   <div class="projects-container">
     <a class="project-link" href="mathquest.html">Final Year Project - Math Quest: Game Based Learning</a>
     <a class="project-link" href="symphonyvr.html">Symphony Shop Simulation VR</a>
