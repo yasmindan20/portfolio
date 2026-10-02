@@ -6,7 +6,7 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Times New Roman, sans-serif;
       background-color: #d8f3dc;
       color: #333;
     }
@@ -71,15 +71,23 @@
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       max-width: 600px;
-      margin: 40px auto;
+      margin: 10px auto;
       text-align: center;
+    }
+    /* MODIFICATION: Added CSS styling for the preview image */
+    .preview-image {
+      max-width: 100%; /* Ensures image fits responsiveness of white box */
+      height: auto; /* Maintains original image ratio */
+      border-radius: 10px; /* Rounds image corners slightly */
+      margin-bottom: 20px; /* Spacing between image and text below */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Adds soft shadow to the image */
     }
 
     .message-box p {
       font-size: 18px;
       margin-bottom: 20px;
     }
-
+   
     .download-button {
       background-color: #52b788;
       color: white;
@@ -119,7 +127,12 @@
 <body>
 
 <div id="mySidebar" class="sidebar">
-  <a href="about.html">About Me</a>
+  <a href="index.html">Home</a>
+  <a href="game.html">Game Development Project</a>
+  <a href="modelling.html">3D Model Project</a>
+  <a href="website.html">Website Development Project</a>
+  <a href="video.html">Video Editing Project</a>
+  <a href="poster.html">Poster</a>
   <a href="exit.html">Exit</a>
 </div>
 
@@ -129,7 +142,10 @@
 
 <div id="main" class="main-content">
   <div class="message-box">
-    <p>You can click the below button to view my report, and its game file.</p>
+    
+    <img src="symphony.JPG" alt="Math Quest Cover Image" class="preview-image">
+    
+    <p>You can click the below button to view my report, and the game zip file.</p>
     <a class="download-button" href="https://drive.google.com/drive/folders/1qneyVkeqXJVuAZz0GNCdC_6KOU_dlVGb?usp=sharing" target="_blank">Open in Google Drive</a>
   </div>
 </div>
