@@ -77,13 +77,20 @@
       padding: 60px 20px 20px 20px;
     }
 
-    .projects-container {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      flex-wrap: wrap;
-      gap: 30px;
+    .header-message {
+      text-align: center;
+      font-size: 22px; /* Fixed font size in px so it won't auto-scale */
+      font-weight: bold;
+      color: #1b4332;
+      margin-bottom: 20px;
+    }
+
+   .projects-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns grid */
+      gap: 30px; /* spacing between items */
       margin-top: 30px;
+      justify-items: center; /* center the cards in each grid cell */
     }
 
     .project-link {
@@ -155,8 +162,15 @@
 </header>
 
 <div id="main" class="main-content">
+<!-- Centered Message Above Boxes -->
+  <div class="header-message">
+    Welcome to my 3D Model Project Showcase! Select a project below to explore.
+  </div>
+  
   <div class="projects-container">
     <a class="project-link" href="house.html">3D Dream House Modelling</a>
+    <a class="project-link" href="house.html">Other 3D Model</a>
+    <a class="project-link" href="house.html">3D Animation</a>
   </div>
 </div>
 
