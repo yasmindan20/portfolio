@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Animation Project</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Times New Roman, sans-serif;
+      background-color: #d8f3dc;
+      color: #333;
+    }
+
+    header {
+      background-color: #b7e4c7;
+      padding: 30px;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #1b4332;
+      transition: margin-left 0.3s;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #40916c;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 80px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 16px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .sidebar a:hover {
+      background-color: #52b788;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #74c69d;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    .main-content {
+      margin-left: 0;
+      transition: margin-left 0.3s;
+      padding: 60px 20px 20px 20px;
+    }
+
+    .message-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin: 10px auto;
+      text-align: center;
+    }
+      /* MODIFICATION: Added CSS styling for the preview image */
+    .preview-image {
+      max-width: 100%; /* Ensures image fits responsiveness of white box */
+      height: auto; /* Maintains original image ratio */
+      border-radius: 10px; /* Rounds image corners slightly */
+      margin-bottom: 20px; /* Spacing between image and text below */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Adds soft shadow to the image */
+    }
+
+    .message-box p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .download-button {
+      background-color: #52b788;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .download-button:hover {
+      background-color: #40916c;
+    }
+  </style>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("mySidebar");
+      const main = document.getElementById("main");
+      const header = document.querySelector("header");
+
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+        main.style.marginLeft = "0";
+        header.style.marginLeft = "0";
+      } else {
+        sidebar.style.width = "250px";
+        main.style.marginLeft = "250px";
+        header.style.marginLeft = "250px";
+      }
+    }
+
+  </script>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="about.html">About Me</a>
+  <a href="exit.html" >Exit</a>
+</div>
+
+<button class="openbtn" onclick="toggleSidebar()">☰ Menu</button>
+
+<header>3D Animation Project</header>
+
+<div id="main" class="main-content">
+  <div class="message-box">
+    
+    <img src="animation.JPG" alt="3D Animation Project Cover Image" class="preview-image">
+    
+    <p>You can click the button below to view the 3D animation images (.png), watch the video demonstration (.avi) and download the .MAX file..</p>
+    <a class="download-button" href="https://drive.google.com/drive/folders/1a8-qz7B7VMJRkEPJSTxv6axlD13h9kZa?usp=sharing" target="_blank">Open in Google Drive</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
