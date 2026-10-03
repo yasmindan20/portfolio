@@ -6,7 +6,7 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Times New Roman, sans-serif;
       background-color: #d8f3dc;
       color: #333;
     }
@@ -31,7 +31,7 @@
       background-color: #40916c;
       overflow-x: hidden;
       transition: 0.3s;
-      padding-top: 60px;
+      padding-top: 80px;
     }
 
     .sidebar a {
@@ -71,8 +71,16 @@
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       max-width: 600px;
-      margin: 40px auto;
+      margin: 10px auto;
       text-align: center;
+    }
+      /* MODIFICATION: Added CSS styling for the preview image */
+    .preview-image {
+      max-width: 100%; /* Ensures image fits responsiveness of white box */
+      height: auto; /* Maintains original image ratio */
+      border-radius: 10px; /* Rounds image corners slightly */
+      margin-bottom: 20px; /* Spacing between image and text below */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Adds soft shadow to the image */
     }
 
     .message-box p {
@@ -129,7 +137,10 @@
 
 <div id="main" class="main-content">
   <div class="message-box">
-    <p>You can click the below button to view my report, MAX file, and others 3D model design.</p>
+    
+    <img src="house.JPG" alt="3D Dream House Cover Image" class="preview-image">
+    
+    <p>You can click the button below to view my project report and download the .MAX file.</p>
     <a class="download-button" href="https://drive.google.com/drive/folders/12yy3teKSSjp3TW3ck3qFISqZi5HFIXPQ?usp=sharing" target="_blank">Open in Google Drive</a>
   </div>
 </div>
