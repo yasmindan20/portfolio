@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Modelling Project</title>
+  <title>Others 3D Model Project</title>
   <style>
     body {
       margin: 0;
@@ -13,18 +13,12 @@
 
     header {
       background-color: #b7e4c7;
-      padding: 0;
+      padding: 30px;
       text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #1b4332;
       transition: margin-left 0.3s;
-      overflow: hidden;
-    }
-
-    header img {
-      width: 100%;
-      height: auto;
-      max-height: 350px;
-      object-fit: cover;
-      display: block;
     }
 
     .sidebar {
@@ -37,13 +31,7 @@
       background-color: #40916c;
       overflow-x: hidden;
       transition: 0.3s;
-      padding-top: 60px;
-    }
-
-    .sidebar img {
-      width: 80%;
-      display: block;
-      margin: 0 auto 20px;
+      padding-top: 80px;
     }
 
     .sidebar a {
@@ -77,47 +65,46 @@
       padding: 60px 20px 20px 20px;
     }
 
-    .projects-container {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .project-link {
+    .message-box {
       background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      
-      /* ======================================================== */
-      /* ADJUST BOX SIZE HERE: change width and height values below */
-      /* ======================================================== */
-      width: 220px;  /* Box width (adjust for larger/smaller squares) */
-      height: 220px; /* Box height (must match width to maintain a square) */
-      box-sizing: border-box; /* Includes padding within the specified size */
-      
-      /* Flexbox alignment to center text vertically and horizontally */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin: 10px auto;
       text-align: center;
+    }
+      /* MODIFICATION: Added CSS styling for the preview image */
+    .preview-image {
+      max-width: 100%; /* Ensures image fits responsiveness of white box */
+      height: auto; /* Maintains original image ratio */
+      border-radius: 10px; /* Rounds image corners slightly */
+      margin-bottom: 20px; /* Spacing between image and text below */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Adds soft shadow to the image */
+    }
+
+    .message-box p {
       font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .download-button {
+      background-color: #52b788;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
       text-decoration: none;
-      color: #1b4332;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
     }
 
-    .project-link:hover {
-      background-color: #a3d9a5;
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    .download-button:hover {
+      background-color: #40916c;
     }
-
   </style>
+
   <script>
     function toggleSidebar() {
       const sidebar = document.getElementById("mySidebar");
@@ -141,21 +128,28 @@
 
 <div id="mySidebar" class="sidebar">
   <a href="index.html">Home</a>
+  <a href="game.html">Game Development Project</a>
+  <a href="modelling.html">3D Model Project</a>
+  <a href="website.html">Website Development Project</a>
+  <a href="video.html">Video Editing Project</a>
+  <a href="poster.html">Poster</a>
   <a href="exit.html">Exit</a>
 </div>
 
 <button class="openbtn" onclick="toggleSidebar()">☰ Menu</button>
 
-<header>
-  <img src="modeling header.jpg" alt="Modeling Project Header">
-</header>
+<header>Others 3D Model Project</header>
 
 <div id="main" class="main-content">
-  <div class="projects-container">
-    <a class="project-link" href="house.html">3D Dream House Modelling</a>
+  <div class="message-box">
+    
+    <img src="model.JPG" alt="Others 3D Model Project Cover Image" class="preview-image">
+    
+    <p>You can click the link below to watch a video explanation of my potted cactus model.<br>
+       You can also click the button below to view the sofa model image (.png).</p>
+    <a class="download-button" href="https://drive.google.com/drive/folders/1h3FI0NdEFxmkVH69Ne9450i-L5TmbmA4?usp=sharing" target="_blank">Open in Google Drive</a>
   </div>
 </div>
 
 </body>
 </html>
-
