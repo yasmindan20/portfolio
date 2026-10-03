@@ -74,16 +74,6 @@
       margin: 10px auto;
       text-align: center;
     }
-     /* MODIFICATION: Styled the YouTube link to stand out nicely */
-    .youtube-link {
-      color: #1b4332; /* Match the header theme color */
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    .youtube-link:hover {
-      color: #52b788; /* Hover effect color */
-    }
     
       /* MODIFICATION: Added CSS styling for the preview image */
     .preview-image {
@@ -92,6 +82,17 @@
       border-radius: 10px; /* Rounds image corners slightly */
       margin-bottom: 20px; /* Spacing between image and text below */
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Adds soft shadow to the image */
+    }
+
+    /* MODIFICATION: Styled the YouTube link to stand out nicely */
+    .youtube-link {
+      color: #1b4332; /* Match the header theme color */
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .youtube-link:hover {
+      color: #52b788; /* Hover effect color */
     }
 
     .message-box p {
@@ -158,6 +159,14 @@
     
     <p>You can click the link below to watch a video explanation of my potted cactus model.<br>
        You can also click the button below to view the sofa model image (.png).</p>
+    <!-- MODIFICATION: Added text link for "Math Quest explanation and demonstration" referencing the YouTube URL -->
+    <p>
+      <a 
+        class="youtube-link" href="https://youtu.be/4-Nurgp1kXY" target="_blank">
+        https://youtu.be/4-Nurgp1kXY
+      </a>
+    </p>
+
     <a class="download-button" href="https://drive.google.com/drive/folders/1h3FI0NdEFxmkVH69Ne9450i-L5TmbmA4?usp=sharing" target="_blank">Open in Google Drive</a>
   </div>
 </div>
