@@ -95,13 +95,13 @@
       margin-bottom: 20px;
     }
 
-    /* Flex Layout for Poster Items with Spacing */
-    .poster-gallery {
+    /* VERTICAL LAYOUT FOR POSTERS (Flex Direction: Column) */
+    .poster-gallery-vertical {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px; /* Space between posters */
-      margin-bottom: 20px;
+      flex-direction: column; /* Stacks posters vertically below each other */
+      align-items: center;    /* Center-aligns the posters on the page */
+      gap: 30px;               /* COMMENT: Adjust spacing between posters here */
+      margin-bottom: 30px;
     }
 
     /* White Box Background for Poster Pictures */
