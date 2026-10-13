@@ -256,28 +256,28 @@
       modal.classList.remove("show");
     }
 
-    // Handles the exit confirmation: attempts window.close(), and falls back gracefully
-    function confirmExit() {
-      // 1. Attempt standard window.close()
-      window.close();
+   // Handles the exit confirmation: attempts window.close(), and falls back gracefully
+function confirmExit() {
+  // 1. Attempt standard window.close()
+  window.close();
 
-      // 2. If browser security blocks window.close(), fallback to about:blank or an exit view
-      setTimeout(function() {
-        try {
-          // Attempt to redirect to blank page
-          window.location.href = "about:blank";
-        } catch (e) {
-          // Fallback UI update if redirection is also restricted in iFrame environments
-          document.body.innerHTML = `
-            <div style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #a8d5ba; color: #1b4332; font-family: 'Times New Roman', Times, serif; text-align: center; padding: 20px;">
-              <h1 style="font-size: 3em; margin-bottom: 20px;">Thank You for Visiting!</h1>
-              <p style="font-size: 1.2em; max-width: 600px; margin-bottom: 30px;">You have successfully exited the session. You may now close this browser tab.</p>
-              <button onclick="window.location.reload()" style="padding: 12px 24px; font-size: 1em; background-color: #ffffff; color: #1b4332; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Re-open Portfolio</button>
-            </div>
-          `;
-        }
-      }, 100);
+  // 2. If browser security blocks window.close(), fallback to Google or an exit view
+  setTimeout(function() {
+    try {
+      // Corrected URL syntax without markdown brackets
+      window.location.href = "https://www.google.com";
+    } catch (e) {
+      // Fallback UI update if redirection is also restricted in iFrame environments
+      document.body.innerHTML = `
+        <div style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #a8d5ba; color: #1b4332; font-family: 'Times New Roman', Times, serif; text-align: center; padding: 20px;">
+          <h1 style="font-size: 3em; margin-bottom: 20px;">Thank You for Visiting!</h1>
+          <p style="font-size: 1.2em; max-width: 600px; margin-bottom: 30px;">You have successfully exited the session. You may now close this browser tab.</p>
+          <button onclick="window.location.reload()" style="padding: 12px 24px; font-size: 1em; background-color: #ffffff; color: #1b4332; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Re-open Portfolio</button>
+        </div>
+      `;
     }
+  }, 100);
+}
   </script>
 </head>
 <body>
