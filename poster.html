@@ -85,45 +85,45 @@
       margin-bottom: 30px;
     }
 
-    /* Section Title Styles (Centered and Bold) */
+    /* BOLD & CENTERED SECTION TITLES */
     .section-title {
       text-align: center;
       font-size: 22px;
       font-weight: bold;
       color: #1b4332;
-      margin-top: 40px;
+      margin-top: 35px;
       margin-bottom: 20px;
     }
 
-    /* VERTICAL LAYOUT FOR POSTERS (Flex Direction: Column) */
-    .poster-gallery-vertical {
-      display: flex;
-      flex-direction: column; /* Stacks posters vertically below each other */
-      align-items: center;    /* Center-aligns the posters on the page */
-      gap: 30px;               /* COMMENT: Adjust spacing between posters here */
-      margin-bottom: 30px;
-    }
-
-    /* White Box Background for Poster Pictures */
-    .poster-box {
-      background-color: #ffffff;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* SHARED WHITE BACKGROUND CONTAINER BOX */
+    .combined-white-card {
+      background-color: #ffffff; /* Single combined white box */
+      padding: 25px;             /* Inner space around posters */
+      border-radius: 12px;       /* Rounded corners */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft drop shadow */
+      max-width: 450px;         /* Adjust total box width here */
+      margin: 0 auto 30px auto;  /* Centers the card on page */
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 35px;                /* Space between stacked items inside the box */
+    }
+
+    /* INDIVIDUAL POSTER ITEM INSIDE WHITE CONTAINER */
+    .poster-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
       cursor: pointer;
+      transition: transform 0.2s ease;
     }
 
-    .poster-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    .poster-item:hover {
+      transform: scale(1.02); /* Slight scale on hover */
     }
 
-    .poster-box img {
-      max-width: 280px;
+    .poster-item img {
       width: 100%;
       height: auto;
       border-radius: 6px;
@@ -135,10 +135,10 @@
       font-weight: bold;
       color: #2d6a4f;
       text-align: center;
-      font-size: 16px;
+      font-size: 17px;
     }
 
-    /* Modal / Lightbox for Full Image View */
+    /* FULL-SCREEN LIGHTBOX MODAL */
     .modal {
       display: none;
       position: fixed;
@@ -203,7 +203,7 @@
       }
     }
 
-    // Function to open image in full view
+    // Opens image in full view popup
     function openFullView(imageSrc, altText) {
       const modal = document.getElementById("imageModal");
       const modalImg = document.getElementById("fullImage");
@@ -214,7 +214,7 @@
       captionText.innerHTML = altText;
     }
 
-    // Function to close the full view modal
+    // Closes full view popup
     function closeModal() {
       document.getElementById("imageModal").style.display = "none";
     }
@@ -238,39 +238,48 @@
 </header>
 
 <div id="main" class="main-content">
-  <!-- Centered Welcome Message -->
+  <!-- Welcome Message -->
   <div class="header-message">
     Welcome to my Poster Project Showcase!
   </div>
 
   <!-- SECTION 1: DESIGN POSTER -->
   <div class="section-title">Design Poster</div>
-  <div class="poster-gallery">
-    <div class="poster-box" onclick="openFullView('intellectual_property.jpg', 'Intellectual Property Poster')">
-      <!-- Replace 'intellectual_property.jpg' with your actual image file path -->
+  <div class="combined-white-card">
+    <!-- 1ST POSTER: Intellectual Property Poster -->
+    <!-- COMMENT: Replace 'intellectual_property.jpg' with your image file path -->
+    <div class="poster-item" onclick="openFullView('intellectual_property.jpg', 'Intellectual Property Poster')">
       <img src="intellectual_property.jpg" alt="Intellectual Property Poster">
       <div class="poster-caption">Intellectual Property Poster</div>
     </div>
   </div>
 
-  <!-- SECTION 2: INFO POSTER -->
-  <div class="section-title">Info Poster</div>
-  <div class="poster-gallery">
-    <div class="poster-box" onclick="openFullView('isa_poster.jpg', 'Instruction Set Architecture')">
-      <!-- Replace 'isa_poster.jpg' with your actual image file path -->
-      <img src="isa_poster.jpg" alt="Instruction Set Architecture">
-      <div class="poster-caption">Instruction Set Architecture</div>
+  <!-- SECTION 2: INFO POSTER (COMBINED IN SINGLE WHITE BOX) -->
+  <div class="section-title">Information Poster</div>
+  <div class="combined-white-card">
+    
+    <!-- 2ND POSTER: Instruction Set Architecture -->
+    <!-- COMMENT: Replace 'isa_poster.jpg' with your image file path -->
+    <div class="poster-item" onclick="openFullView('isa_poster.jpg', 'Instruction Set Architecture Poster')">
+      <img src="isa_poster.jpg" alt="Instruction Set Architecture Poster">
+      <div class="poster-caption">Instruction Set Architecture Poster</div>
     </div>
 
-    <div class="poster-box" onclick="openFullView('yiq_poster.jpg', 'YIQ Color Model')">
-      <!-- Replace 'yiq_poster.jpg' with your actual image file path -->
-      <img src="malaysia_airlines.jpg" alt="Malaysia Airline">
-      <div class="poster-caption">Malaysia Airline</div>
+    <!-- 3RD POSTER:  -->
+    <div class="poster-item" onclick="openFullView('malaysia_airlines.jpg', 'Malaysia Airline Poster')">
+      <img src="malaysia_airlines.jpg" alt="Malaysia Airline Poster">
+      <div class="poster-caption">Malaysia Airline Poster</div>
+    </div>
+
+    <!-- 4RD POSTER:  -->
+      <div class="poster-item" onclick="openFullView('Math Quest Poster.jpg', 'Math Quest Poster')">
+      <img src="Math Quest Poster.jpg" alt="Math Quest Poster">
+      <div class="poster-caption">Math Quest Poster</div>
     </div>
   </div>
 </div>
 
-<!-- Full Image View Modal Overlay -->
+<!-- FULL SCREEN IMAGE POPUP (MODAL) -->
 <div id="imageModal" class="modal" onclick="closeModal()">
   <span class="close-btn" onclick="closeModal()">&times;</span>
   <img class="modal-content" id="fullImage">
