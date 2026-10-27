@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificate</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #d8f3dc;
+      color: #333;
+    }
+
+    header {
+      background-color: #b7e4c7;
+      padding: 0;
+      text-align: center;
+      transition: margin-left 0.3s;
+      overflow: hidden;
+    }
+
+    header img {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background-color: #40916c;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 80px;
+    }
+
+    .sidebar img {
+      width: 80%;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 16px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .sidebar a:hover {
+      background-color: #52b788;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #74c69d;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 3;
+    }
+
+    .main-content {
+      margin-left: 0;
+      transition: margin-left 0.3s;
+      padding: 60px 20px 40px 20px;
+    }
+
+    .header-message {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #1b4332;
+      margin-bottom: 30px;
+    }
+
+    /* BOLD & CENTERED SECTION TITLES */
+    .section-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #1b4332;
+      margin-top: 35px;
+      margin-bottom: 20px;
+    }
+
+    /* SHARED WHITE BACKGROUND CONTAINER BOX */
+    .combined-white-card {
+      background-color: #ffffff; /* Single combined white box */
+      padding: 25px;             /* Inner space around posters */
+      border-radius: 12px;       /* Rounded corners */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft drop shadow */
+      max-width: 450px;         /* Adjust total box width here */
+      margin: 0 auto 30px auto;  /* Centers the card on page */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 35px;                /* Space between stacked items inside the box */
+    }
+
+    /* INDIVIDUAL POSTER ITEM INSIDE WHITE CONTAINER */
+    .poster-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .poster-item:hover {
+      transform: scale(1.02); /* Slight scale on hover */
+    }
+
+    .poster-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .poster-caption {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #2d6a4f;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    /* FULL-SCREEN LIGHTBOX MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 8px;
+    }
+
+    #modal-caption {
+      margin: 15px auto;
+      display: block;
+      width: 80%;
+      text-align: center;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .close-btn:hover {
+      color: #74c69d;
+    }
+  </style>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("mySidebar");
+      const main = document.getElementById("main");
+      const header = document.querySelector("header");
+
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+        main.style.marginLeft = "0";
+        header.style.marginLeft = "0";
+      } else {
+        sidebar.style.width = "250px";
+        main.style.marginLeft = "250px";
+        header.style.marginLeft = "250px";
+      }
+    }
+
+    // Opens image in full view popup
+    function openFullView(imageSrc, altText) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("fullImage");
+      const captionText = document.getElementById("modal-caption");
+
+      modal.style.display = "block";
+      modalImg.src = imageSrc;
+      captionText.innerHTML = altText;
+    }
+
+    // Closes full view popup
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="game.html">Game Development Project</a>
+  <a href="modelling.html">3D Model Project</a>
+  <a href="website.html">Website Development Project</a>
+  <a href="video.html">Video Editing Project</a>
+</div>
+
+<button class="openbtn" onclick="toggleSidebar()">☰ Menu</button>
+
+<header>
+  <img src="certificate header.jpg" alt="Certificate Header">
+</header>
+
+<div id="main" class="main-content">
+  <!-- Welcome Message -->
+  <div class="header-message">
+    Welcome to my Certificate Showcase!
+  </div>
+
+  <!-- SECTION 1: DESIGN POSTER -->
+  <div class="section-title">List of Certificate</div>
+  <div class="combined-white-card">
+    <!-- 1ST POSTER: Intellectual Property Poster -->
+    <!-- COMMENT: Replace 'intellectual_property.jpg' with your image file path -->
+    <div class="poster-item" onclick="openFullView('SIJIL DATA HACKATHON.jpg', 'DATA HACKATHON CERTIFICATE')">
+      <img src="SIJIL DATA HACKATHON.jpg" alt="DATA HACKATHON CERTIFICATE">
+      <div class="poster-caption">DATA HACKATHON CERTIFICATE</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: INFO POSTER (COMBINED IN SINGLE WHITE BOX) -->
+  <div class="section-title">Information Poster</div>
+  <div class="combined-white-card">
+    
+    <!-- 2ND POSTER: Instruction Set Architecture -->
+    <!-- COMMENT: Replace 'isa_poster.jpg' with your image file path -->
+    <div class="poster-item" onclick="openFullView('isa_poster.jpg', 'Instruction Set Architecture Poster')">
+      <img src="isa_poster.jpg" alt="Instruction Set Architecture Poster">
+      <div class="poster-caption">Instruction Set Architecture Poster</div>
+    </div>
+
+    <!-- 3RD POSTER:  -->
+    <div class="poster-item" onclick="openFullView('malaysia_airlines.jpg', 'Malaysia Airline Poster')">
+      <img src="malaysia_airlines.jpg" alt="Malaysia Airline Poster">
+      <div class="poster-caption">Malaysia Airline Poster</div>
+    </div>
+
+    <!-- 4RD POSTER:  -->
+      <div class="poster-item" onclick="openFullView('Math Quest Poster.jpg', 'Math Quest Poster')">
+      <img src="Math Quest Poster.jpg" alt="Math Quest Poster">
+      <div class="poster-caption">Math Quest Poster</div>
+    </div>
+  </div>
+</div>
+
+<!-- FULL SCREEN IMAGE POPUP (MODAL) -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="fullImage">
+  <div id="modal-caption"></div>
+</div>
+
+</body>
+</html>
